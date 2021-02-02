@@ -1,0 +1,36 @@
+{% extends 'template/layout.twig' %}
+
+
+{% block title %}
+    Modifier votre anonce!
+{% endblock %}
+{% block body %}
+
+    <form action="" method="post">
+        <div class="mb-3">
+            <label for="email" class="form-label">Veuillez saisir votre e-mail</label>
+            <input type="email" class="form-control" name="email" disabled
+                   value="{{ annonce.authorEmail }}" >
+        </div>
+        <div class="mb-3">
+            <label for="titre" class="form-label">Veuillez saisir votre titre</label>
+            <input type="text" class="form-control" name="titre" size="30"
+                   value="{{ annonce.titre }}"
+                   maxlength="30" placeholder="titre">
+        </div>
+        <div class="form-floating">
+            <label for="floatingTextarea2">Veuillez saisir votre description</label>
+            <textarea class="form-control" placeholder="Description" name="description" style="height: 100px">{{ annonce.description }}</textarea>
+        </div>
+
+        <div class="mt-3">
+            <label for="formFile" class="form-label">Veuillez saisir une image</label>
+            <input class="form-control" type="file" id="formFile" name="img" value="{{ annonce.image }}">
+            <input type="hidden" name="MAX_FILE_SIZE" value="30000" />
+        </div>
+        <input type="hidden" name="id" value="{{ annonce.id }}" />
+        <div class="d-grid gap-2 text-center">
+            <button type="submit" class="btn btn-outline-info btn-lg btn-block mt-5">Valider votre annonce</button>
+        </div>
+    </form>
+{% endblock %}

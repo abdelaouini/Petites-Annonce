@@ -1,0 +1,29 @@
+.h1-postuler{
+    font-family: "Bodoni MT";
+}
+.taille-img{
+    width: 100%;
+    height: 300px;
+    padding-left: 400px;
+    padding-right: 400px;
+}
+
+.marge{
+    margin-top: 170px;
+    width: 100%;
+    min-height: 188px;
+    font-family: "Adobe Myungjo Std M";
+    color: red;
+}
+.a {
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.taille-img{
+    width: 100px;
+    height: 600px;
+}
+

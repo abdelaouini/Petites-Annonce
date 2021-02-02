@@ -1,0 +1,32 @@
+{% extends 'template/layout.twig' %}
+
+{% block title %}
+    Go postuler!
+{% endblock %}
+
+{% block body %}
+    {% if valider %}
+        <div class="alert alert-primary" role="alert">
+            Votre annonce a été valider avec succès
+        </div>
+    {% endif %}
+    <div class="row mb-2">
+        <div class="col-md-12">
+            <div class="card flex-md-row mb-4 box-shadow h-md-250">
+                <div class="card-body d-flex flex-column align-items-start">
+                    <h3 class="mb-0">
+                        <a class="text-dark" href="#">{{ annonce.titre }}</a>
+                    </h3>
+                    <p>Rédiger par : <a href="#">{{ annonce.authorEmail }}</a></p>
+                    <p class="card-text mb-auto">{{ annonce.description }}</p>
+                    <div class="mb-1 text-muted" style="width: 100%">
+                        Posté {{ annonce.dateCreation }}
+                        <a style="float: right" href="{{ base_path ~ '/telecharger/' ~ annonce.id }}"> <img src="/assets/icon-svg/download.svg" alt="" width="32" height="32" title="Télécharger"></a>
+                    </div>
+
+                </div>
+                <img class="card-img-right flex-auto d-none d-md-block" data-src="holder.js/200x250?theme=thumb" alt="Thumbnail [200x250]" style="width: 200px; height: 250px;" src="{{ annonce.image }}" data-holder-rendered="true">
+            </div>
+        </div>
+    </div>
+{% endblock %}

@@ -1,0 +1,23 @@
+{
+  "name": "acs/desuite",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "abdel",
+      "email": "abdy.003@gmail.com"
+    }
+  ],
+  "require": {
+    "twig/twig": "^2.0",
+    "altorouter/altorouter": "1.1.0",
+    "symfony/var-dumper": "^5.2",
+    "qferr/mjml-php": "^1.0",
+    "mpdf/mpdf": "^8.0",
+    "nesbot/carbon": "^2.44"
+  },
+  "autoload": {
+    "psr-4": {
+      "": "src/"
+    }
+  }
+}

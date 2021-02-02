@@ -1,0 +1,37 @@
+{% extends 'template/layout.twig' %}
+
+
+{% block title %}
+
+    Ajouter votre anonce!
+
+{% endblock %}
+{% block body %}
+    <form enctype="multipart/form-data" action="/ajouter" method="post" name="ajouter" >
+        <div class="mb-3">
+            <label for="email" class="form-label">Veuillez saisir votre e-mail</label>
+            <input type="email" class="form-control" name="email" aria-describedby="emailHelp" size="30"
+                   maxlength="30" placeholder="Ex:A********@gmail.com">
+            <div id="emailHelp" class="form-text text-right"><small>On ne partagera jamais votre e-mail.</small></div>
+        </div>
+        <div class="mb-3">
+            <label for="titre" class="form-label">Veuillez saisir votre titre</label>
+            <input type="text" class="form-control" name="titre" size="30"
+                   maxlength="30" placeholder="titre">
+        </div>
+        <div class="form-floating">
+            <label for="floatingTextarea2">Veuillez saisir votre description</label>
+            <textarea class="form-control" placeholder="Description" name="description" style="height: 100px"></textarea>
+        </div>
+
+        <div class="mt-3">
+            <label for="formFile" class="form-label">Veuillez saisir une image</label>
+            <input class="form-control" type="file" id="formFile" name="img">
+            <input type="hidden" name="MAX_FILE_SIZE" value="30000" />
+        </div>
+        <div class="d-grid gap-2 text-center">
+            <button type="submit" class="btn btn-outline-info btn-lg btn-block mt-4">Publier votre annonce</button>
+        </div>
+
+    </form>
+{% endblock %}

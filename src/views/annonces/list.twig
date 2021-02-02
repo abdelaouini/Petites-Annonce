@@ -1,0 +1,28 @@
+{% extends 'template/layout.twig' %}
+
+
+{% block title %}
+    Un poste vous attend...
+{% endblock %}
+{% block body %}
+
+    {% if lists|length > 0 %}
+            <div class="card-columns">
+                    {% for annonce in lists %}
+                        <div class="card mb-5" >
+                            <img class="card-img-top"  height="250px" src="{{ annonce.img }}" alt="Card image cap">
+                            <div class="card-body ">
+                                <h5 class="card-title text-center">{{ annonce.titre }}</h5>
+                                <div class="mb-1 text-muted">Posté le {{ annonce.date_creation | date("d/m/Y H:i:s") }}</div>
+                                <p class="card-text text-taille a">{{ annonce.description}}</p>
+                                <p style="width: 100%" class="text-center">
+                                    <a href="/details/{{ annonce.id }}" > Afficher les details du poste</a></p>
+                                <a  href="{{ base_path ~ '/telecharger/' ~ annonce.id }}" type="submit" class="btn btn-warning btn-sm btn-block font mt-3">Telecharger!</a>
+                            </div>
+                        </div>
+                    {% endfor %}
+            </div>
+    {% else %}
+        <div class="col-12 text-center marge"><h2>Aucune annonce est disponible pour le moment veuillez réessayer dans quelques instants :/</h2></div>
+    {% endif %}
+{% endblock %}

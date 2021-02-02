@@ -1,0 +1,29 @@
+{% block title %}
+    <h1 class="h1-postuler">Go postuler!</h1>
+{% endblock %}
+<!doctype html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="{{ base_path ~ '/assets/css/bootstrap.css' }}">
+    <link rel="stylesheet" href="{{ base_path ~ '/assets/css/style.css' }}">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+</head>
+<body>
+<div class="container">
+    <div class="row">
+        <div class="card">
+            <div class="card-body">
+                <h1 class="card-title text-center">{{ annonce.titre }}</h1>
+                <p class="card-text">Annonce créer par <a href="">{{ annonce.authorEmail }}</a></p>
+                <p class="card-text">{{ annonce.description }}</p>
+                <p class="card-text"><small class="text-muted ">posté il y a 14 jours</small></p>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>
